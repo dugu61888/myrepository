@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apcompany.user.dao.TQuestionsDao">
+	<resultMap id="BaseResultMap" type="com.apcompany.user.pojo.TQuestions">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="question" property="question" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="ctime" property="ctime" jdbcType="TIMESTAMP" />
+		<result column="utime" property="utime" jdbcType="TIMESTAMP" />
+		<association property="tAnswers" javaType="com.apcompany.user.pojo.TAnswers">
+			<id column="aid" property="id" />
+			<result column="aquestionId" property="questionid" />
+			<!--<result column="status" property="status" /> -->
+			<result column="answer" property="answer" />
+			<!-- <result column="ctime" property="ctime" />
+			<result column="utime" property="utime" /> -->
+		</association>
+		<collection property="choices" ofType="com.apcompany.user.pojo.TChoises">
+			<id column="cid" property="id" />
+			<result column="cquestionId" property="questionid" />
+			<result column="choise" property="choise" />
+		</collection>
+	</resultMap>
+	
+	<select id="searchAll"  resultMap="BaseResultMap"  >
+	select a.*,b.answer,c.choise,b.id aid,b.questionid aquestionid,c.questionid cquestionid,c.id cid,d.id did,d.questionid dquestionid,d.labelid labelid,d.labelsrelid labelsrelid from 
+	questions a
+	join 
+	answers b
+	on(a.id=b.questionId)
+	join
+	choises c
+	on(a.id=c.questionId)
+	left join
+	labels_question_rel d 
+	on(a.id=d.questionid)
+	where  a.status=0 and b.status=0 and c.status=0  and type= 1 and keypointId=#{keypointId}
+		<if test="questionid!=null and questionid>0" >
+  			and a.id= #{questionid,jdbcType=INTEGER}
+  		</if>
+  	limit #{pageStart},#{pageSize}
+	</select>
+	
+	
+	
+</mapper>
