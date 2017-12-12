@@ -26,18 +26,15 @@ public class ValidTokenInterceptor extends HandlerInterceptorAdapter {
 			TokenModel tokenModel = CommonUtil.validToken(request.getParameter("token"));
 		    if(tokenModel==null){
 		    	logger.info("token is not valid");
-		    	//CommonUtil.setResponseData(response, "token is null or  invalid");
-				TokenModel tokenModel2 =new TokenModel("", 8, UserTypeEnum.Student);
-				TokenModel tokenModel3 =new TokenModel("", 3, UserTypeEnum.Teacher);
-				setDataToRequest(request, tokenModel2);
-				setDataToRequest(request, tokenModel3);
-		    	return true;
+		    	CommonUtil.setResponseData(response, "token is null or  invalid");
+
+		    	return false;
 		    }
 //			if(! userinfoInfoService.checkAccessToken(tokenModel.getToken())){
 //		    	logger.info("user is offline,pleace login or pust the right token");
 //		    	CommonUtil.setResponseData(response, "user token is not exits");
-//				if
-//				switch (userType){
+//
+//				switch (tokenModel.getToken().get){
 //					case 0:
 //					{
 //						TokenModel tokenModel2 =new TokenModel("", 8, UserTypeEnum.Student);

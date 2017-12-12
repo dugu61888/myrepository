@@ -23,6 +23,9 @@ public interface ITeachCourseDao {
 			+ " where t_c.course_id=#{courseId} and online.status=1 and t_c.status=2 order by #{orderType} "
 			+ " limit #{index},#{limit}")
 	List<OnlineTCInfoDO> getOnlineListBySubject(OnlineTCForm form);
+
+
+
 	
 	@Select("select * from teach_course where teacher_id=#{teacherId} ")
 	List<TeachCourseDO> getTCListByTId(int teacherId);
