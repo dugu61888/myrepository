@@ -1,9 +1,11 @@
 package com.apcompany.api.model.schema;
 
 
+import java.util.Date;
+
 import com.apcompany.api.constrant.InviteVideoStatusEnum;
 
-import java.sql.Date;
+
 
 public class InvitationTeachDO {
 	
