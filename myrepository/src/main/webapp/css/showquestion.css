@@ -1,0 +1,163 @@
+.wdw {
+				width: 1400px;
+				text-align: center;
+				margin: 0 auto;
+				padding-top: 100px;
+			}
+			
+			.childW {
+				width: 900px;
+				margin: 25px;
+				background-color: #FFFFFF;
+				position: relative;
+				float: left;
+				text-align: left;
+				padding-left: 5px;
+				padding-top:20px;
+			}
+			
+			.childW h1 {
+				font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+				font-weight: 400;
+				font-style: normal;
+				font-size: 14px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+			}
+			
+			.childW p {
+				font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+				font-weight: 400;
+				font-style: normal;
+				font-size: 14px;
+				margin-top: 2px;
+				margin-bottom: 2px;
+				margin-left: 30px;
+				
+			}
+			
+			.childW h2 {
+				font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+				font-weight: 400;
+				font-style: normal;
+				font-size: 14px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+			}
+			.col {
+				width: 1000px;
+				margin:0 auto;
+			}
+			.main {
+				
+			}
+			.childw inut {
+				width:600px;
+				height:30px;
+				margin-top:10px;
+				margin-bottom:10px;
+			}
+			.childw button {
+				height:30px;
+				margin-top:10px;
+				margin-bottom:10px;
+				margin-left:80px;
+			}
+			.neip{
+			 	margin-top:10px;
+				margin-bottom:10px;
+				margin-left:40px;
+			}
+			.MathJax_Display {
+   			"text-align": "center",
+    		margin:       "1em 0em"
+  			}
+
+  			.MathJax,.merror {
+    		"background-color": "#FFFF88",
+   			color:   "#CC0000",
+   			 border:  "1px solid #CC0000",
+    		padding: "1px 3px",
+    		"font-style": "normal",
+    		font-size:  16px;
+  			}
+  			.quesT,.anT,.opT{
+  				border-style:solid;
+  				border-width:2px;
+  				border-color:#FFFFFF;
+  			}
+  			.tmpBt {s
+  				font-size: 14px;
+				font-style: normal;
+				font-weight: 500;
+  			}
+  			.btDiv1{
+  			margin-top:20px;
+  			margin-left:250px;
+  			margin-bottom:40px;
+  			}
+  			.bt1 {
+  			height:30px;
+  			background-color:#FAEBD7;
+  			}
+  			.editAndSaveInput {
+  			width:400px;
+  			height:200px;
+  			}
+			
+.labelDiv label{
+	border-style:solid;
+	border-width:1px;
+	display:inline-block;
+	margin:5px;
+	padding:5px;
+}
+.nonrelativeLabel div {
+	position:relative;
+	float:left;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #5BC0DE;
+	width:200px;
+	height:50px;
+	margin:5px;
+}
+.relativeLabel {
+	clear:both;
+	
+}
+.relativeLabel div {
+	position:relative;
+	float:left;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #5BC0DE;
+	margin:5px;
+}
+.relativeLabel select {
+	width:100px;
+}
+.editChildw .neip input {
+	width:200px;
+	heigth:100px;
+	text-align: left;
+	padding-top:0px;
+}
+.anT,.opT,.fl{
+	position: relative;
+	float: left;
+	height:60px;
+	display: table-cell;/*img设置成表格元素属性*/
+    vertical-align: middle;/*两个display设置后这个属性就起作用*/
+}
+.newDiv {
+	clear:both;
+	display:table;
+}
+.anT p,.opT p,.fl p {
+	height:60px;
+	display: table-cell;/*img设置成表格元素属性*/
+    vertical-align: middle;/*两个display设置后这个属性就起作用*/
+}

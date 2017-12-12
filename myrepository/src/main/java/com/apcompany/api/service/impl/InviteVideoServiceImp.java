@@ -111,11 +111,13 @@ public class InviteVideoServiceImp implements IInviteVideoService {
 			}else{
 				invitationTeachDO.onCommit();
 				teachOrderDO = teachOrderService.createTeachOrder(invitationTeachDO);
+				logger.info(invitationTeachDO.toString());
 				messgae = new InviteVideoMessgae(MessagePushEnum.VIDEO_FINISH);
 			}
 			messagePushService.pushMessageToTeacher(invitationTeachDO.getTeacherId(),messgae);
-			logger.info(invitationTeachDO.getEndTime().toString());
+			logger.info(invitationTeachDO.toString());
 			invitationTeachDao.update(invitationTeachDO);
+			//logger.info(teachOrderDO.toString());
 			return ApiResponse.buildSuccess(teachOrderDO);
 		}catch (Exception e){
 			logger.error("closeInvitationByStudent",e);

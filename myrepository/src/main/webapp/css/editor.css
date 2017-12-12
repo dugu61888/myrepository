@@ -1,0 +1,43 @@
+.editor {
+	background-color: #FFFFFF;
+	text-align: left;
+	width: 1000px;
+	height: 100px;
+	line-height: 100px;
+	border-width: 0px;
+}
+
+.editor2 {
+	background-color: #FFFFFF;
+	text-align: left;
+	width: 1000px;
+	height: 100px;
+	line-height: 100px;
+	border-width: 0px;
+	border-color: #00CCCC;
+}
+
+#etr3 {
+	width: 200px;
+	height: 100px;
+}
+
+#inp {
+	width: 400px;
+	height: 100px;
+}
+.mathEditor button {
+	width: 70px;
+	height: 60px;
+	text-align: left;
+	margin:0px;
+}
+.mathEditor {
+	text-align: left;
+}
+.editor table {
+	margin: 0px;
+	padding: 0px;
+	cellspacing:0px;
+	
+}

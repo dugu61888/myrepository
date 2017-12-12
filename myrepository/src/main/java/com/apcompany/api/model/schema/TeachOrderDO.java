@@ -126,6 +126,26 @@ public class TeachOrderDO {
 		this.modified = modified;
 	}
 
+	@Override
+	public String toString() {
+		return "TeachOrderDO{" +
+				"id=" + id +
+				", teachCourseId=" + teachCourseId +
+				", teacherId=" + teacherId +
+				", studentId=" + studentId +
+				", beginTime=" + beginTime +
+				", endTime=" + endTime +
+				", useMinute=" + useMinute +
+				", money=" + money +
+				", status=" + status +
+				", teacherCustomerScore=" + teacherCustomerScore +
+				", teacherMannerScore=" + teacherMannerScore +
+				", teacherSkillScore=" + teacherSkillScore +
+				", created='" + created + '\'' +
+				", modified='" + modified + '\'' +
+				'}';
+	}
+
 	public static void main(String[]args) throws JsonProcessingException {
 		ObjectMapper mapper =new ObjectMapper();
 		String str = mapper.writeValueAsString(new TeachOrderDO());

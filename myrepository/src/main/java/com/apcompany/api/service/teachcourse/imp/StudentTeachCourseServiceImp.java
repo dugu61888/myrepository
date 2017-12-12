@@ -27,6 +27,15 @@ public class StudentTeachCourseServiceImp implements IStudentTeachCourseService 
 		if(onlineTCForm.getCourseId() ==0){
 			return result;
 		}
+//		List<OnlineTCInfoDO>temp=teachCourseDao.getOnlineListBySubject(onlineTCForm);
+//		int index=onlineTCForm.getIndex();
+//		int limit=onlineTCForm.getLimit();
+//		int k=0;
+//		for(int i=0;i<temp.size();i++){
+//			OnlineTCInfoDO onlineTCInfoDO=temp.get(i);
+//			int teacherid=onlineTCInfoDO.getTeacherId();
+//			if(teacherid==)
+//		}
 		return teachCourseDao.getOnlineListBySubject(onlineTCForm);
 	}
 	

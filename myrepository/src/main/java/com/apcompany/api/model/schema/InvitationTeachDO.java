@@ -1,7 +1,9 @@
 package com.apcompany.api.model.schema;
 
-import java.util.Date;
+
 import com.apcompany.api.constrant.InviteVideoStatusEnum;
+
+import java.sql.Date;
 
 public class InvitationTeachDO {
 	
@@ -26,19 +28,19 @@ public class InvitationTeachDO {
 	
 	public InvitationTeachDO onConnection(){
 		this.setStatus(InviteVideoStatusEnum.CONN.getKey());
-		this.setBeginTime(new Date());
+		this.setBeginTime(new Date(System.currentTimeMillis()));
 		return this;
 	}
 	
 	public InvitationTeachDO onCommit(){
 		this.setStatus(InviteVideoStatusEnum.COMMIT.getKey());
-		this.setEndTime(new Date());
+		this.setEndTime(new Date(System.currentTimeMillis()));
 		return this;
 	}
 	
 	public InvitationTeachDO onCut(){
 		this.setStatus(InviteVideoStatusEnum.CUT.getKey());
-		this.setEndTime(new Date());
+		this.setEndTime(new Date(System.currentTimeMillis()));
 		return this;
 	}
 
@@ -113,9 +115,19 @@ public class InvitationTeachDO {
 	public void setTeacherId(int teacherId) {
 		this.teacherId = teacherId;
 	}
-	
-   
-	
-	
 
+	@Override
+	public String toString() {
+		return "InvitationTeachDO{" +
+				"id=" + id +
+				", studentId=" + studentId +
+				", teacherId=" + teacherId +
+				", teachCourseId=" + teachCourseId +
+				", status=" + status +
+				", beginTime=" + beginTime +
+				", endTime=" + endTime +
+				", created=" + created +
+				", modified=" + modified +
+				'}';
+	}
 }
