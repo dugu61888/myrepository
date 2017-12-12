@@ -1,0 +1,4 @@
+2017-12-11 15:45:09,586 INFO [com.apcompany.api.config.MessagePushConfig] - Alibaba Client is created ************
+2017-12-11 15:45:15,401 INFO [com.apcompany.api.service.impl.MessageAlibabaPushServiceImp] - C7FF372F-2777-4020-BE60-CBB1ACBC670F
+2017-12-11 15:45:15,401 INFO [com.apcompany.api.service.impl.MessageAlibabaPushServiceImp] - 500207
+2017-12-11 15:45:15,401 INFO [com.apcompany.api.service.impl.MessageAlibabaPushServiceImp] - channalId is d2f6e42bc9dc40dba2445c3ae5a20d87
