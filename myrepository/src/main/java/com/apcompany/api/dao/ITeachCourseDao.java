@@ -16,7 +16,7 @@ public interface ITeachCourseDao {
 			+ " t_info.profession as profession, "
 			+ " online.status as teacher_status, x(online.address) as lat,y(online.address) as lng "
 			+ "from teach_course as t_c "
-			+ "left join join teacher as t  on t.id=t_c.teacher_id "
+			+ "left join teacher as t  on t.id=t_c.teacher_id "
 			+ "inner join user_online_info as online "
 			+ "on online.type=1 and  t_c.teacher_id=online.user_id "
 			+ " left join teacher_base_info t_info on t_info.teacher_id=t.id "
