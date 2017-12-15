@@ -14,7 +14,7 @@ public class TeacherInvitationController {
 	private IInviteVideoService invitationService;
 	
 	
-	@RequestMapping(value = "/get/videoaccount.json", method = RequestMethod.POST)
+	@RequestMapping(value = "/get/videoaccount.json", method = RequestMethod.GET)
 	@ResponseBody
 	public Object getCode(
 			@RequestAttribute(value = "teacherId", required = true) Integer teacherId) {
