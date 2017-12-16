@@ -45,4 +45,7 @@ public interface ITeachOrderDao {
 	@Select("select * from video_order where type=1 and src_id=#{bookId}")
 	public TeachOrderDO getByBookId(int bookId);
 
+	@Select("select * from video_order where  student_id=#{studentId} order by id desc limit 1")
+	public TeachOrderDO getLastOrderByStudentId(int studentId);
+
 }
