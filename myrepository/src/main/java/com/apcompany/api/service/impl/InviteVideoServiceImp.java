@@ -129,7 +129,7 @@ public class InviteVideoServiceImp implements IInviteVideoService {
 	public ApiResponse successInvite(int studentId) {
 		try{
 			InvitationTeachDO invitationTeachDO = getHandleInvitationByStudent(studentId);
-			if (invitationTeachDO == null || invitationTeachDO.getStatus()!=InviteVideoStatusEnum.CONN.getKey()) {
+			if (invitationTeachDO == null || invitationTeachDO.getStatus()!=InviteVideoStatusEnum.WAIT.getKey()) {
 				return ApiResponse.buildFailure();
 			}
 			invitationTeachDao.update(invitationTeachDO.onConnection());
@@ -175,7 +175,7 @@ public class InviteVideoServiceImp implements IInviteVideoService {
 		try{
 			InvitationTeachDO invitationTeachDO = getHandleInvitationByTeacher(teacherId);
 			if (invitationTeachDO == null) {
-				return null;
+				return ApiResponse.buildFailure("no result");
 			}
 			teacherTCService.updateStatus(teacherId, invitationTeachDO.getTeachCourseId(), TeachCourseStatusEnum.BUSY);
 			return ApiResponse.buildSuccess(videoSecureConfig.getFreeOne(invitationTeachDO.getId()));
