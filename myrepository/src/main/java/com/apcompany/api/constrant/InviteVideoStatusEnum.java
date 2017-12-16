@@ -8,7 +8,7 @@ public enum InviteVideoStatusEnum {
     WAIT(1,"wait"),
     CUT(2,"挂断"),
     CONN(3,"连接中"),
-    COMMIT(4,"通话技术");
+    COMMIT(4,"通话结束");
 	
 	public final int key;
 	public final String value;

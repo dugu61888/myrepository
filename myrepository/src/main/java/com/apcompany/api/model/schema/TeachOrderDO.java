@@ -8,37 +8,37 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TeachOrderDO {
-	
-	private int id;
-	private int teachCourseId;
-	private int teacherId;
-	private int studentId;
-	private Date beginTime;
-	private Date endTime;
-	private int useMinute;
-	private int money;	
-	//状态 0.inite进行中， 1.支付中 2.支付成功 3.已经评价 4.已退款。5. 已取消（book类型，未支付）
-	private int status;
-	private float teacherCustomerScore;
-	private float teacherMannerScore;
-	private float teacherSkillScore;
-	private String created;
-	private String modified;
-	
-	public TeachOrderDO (){}
-	
-	public TeachOrderDO (InvitationTeachDO invitationTeachDO){
-		if (invitationTeachDO== null){
-			return;
+
+		private int id;
+		private int teachCourseId;
+		private int teacherId;
+		private int studentId;
+		private Date beginTime;
+		private Date endTime;
+		private int useMinute;
+		private int coin;
+		//状态 0.inite进行中， 1.支付中 2.支付成功 3.已经评价 4.已退款。5. 已取消（book类型，未支付）
+		private int status;
+		private float teacherCustomerScore;
+		private float teacherMannerScore;
+		private float teacherSkillScore;
+		private String created;
+		private String modified;
+
+		public TeachOrderDO (){}
+
+		public TeachOrderDO (InvitationTeachDO invitationTeachDO){
+			if (invitationTeachDO== null){
+				return;
+			}
+			this.teachCourseId=invitationTeachDO.getTeachCourseId();
+			this.teacherId=invitationTeachDO.getTeacherId();
+			this.studentId=invitationTeachDO.getStudentId();
+			this.beginTime=invitationTeachDO.getBeginTime();
+			this.endTime=invitationTeachDO.getEndTime();
+			this.useMinute = DateUtil.compareMinuteBetweenDate(endTime,beginTime);
+			this.status= TeachOrderStatusEnum.PAY_FINISH.getKey();
 		}
-		this.teachCourseId=invitationTeachDO.getTeachCourseId();
-		this.teacherId=invitationTeachDO.getTeacherId();
-		this.studentId=invitationTeachDO.getStudentId();
-		this.beginTime=invitationTeachDO.getBeginTime();
-		this.endTime=invitationTeachDO.getEndTime();
-		this.useMinute = DateUtil.compareMinuteBetweenDate(endTime,beginTime);
-		this.status= TeachOrderStatusEnum.PAY_FINISH.getKey();
-	}
 	
 	public Integer getId() {
 		return id;
@@ -83,12 +83,15 @@ public class TeachOrderDO {
 	public void setUseMinute(int useMinute) {
 		this.useMinute = useMinute;
 	}
-	public int getMoney() {
-		return money;
+
+	public int getCoin() {
+		return coin;
 	}
-	public void setMoney(int money) {
-		this.money = money;
+
+	public void setCoin(int coin) {
+		this.coin = coin;
 	}
+
 	public Integer getStatus() {
 		return status;
 	}
@@ -136,7 +139,7 @@ public class TeachOrderDO {
 				", beginTime=" + beginTime +
 				", endTime=" + endTime +
 				", useMinute=" + useMinute +
-				", money=" + money +
+				", coin=" + coin +
 				", status=" + status +
 				", teacherCustomerScore=" + teacherCustomerScore +
 				", teacherMannerScore=" + teacherMannerScore +

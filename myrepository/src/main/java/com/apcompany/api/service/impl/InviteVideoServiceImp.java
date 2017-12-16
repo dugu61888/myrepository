@@ -117,7 +117,7 @@ public class InviteVideoServiceImp implements IInviteVideoService {
 			messagePushService.pushMessageToTeacher(invitationTeachDO.getTeacherId(),messgae);
 			logger.info(invitationTeachDO.toString());
 			invitationTeachDao.update(invitationTeachDO);
-			//logger.info(teachOrderDO.toString());
+			logger.info(teachOrderDO.toString());
 			return ApiResponse.buildSuccess(teachOrderDO);
 		}catch (Exception e){
 			logger.error("closeInvitationByStudent",e);

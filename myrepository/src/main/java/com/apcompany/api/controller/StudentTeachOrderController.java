@@ -1,11 +1,9 @@
 package com.apcompany.api.controller;
 
+import com.apcompany.api.model.vo.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import com.apcompany.api.model.form.OrderTeacherScoreForm;
 import com.apcompany.api.service.ITeachOrderService;
 import com.apcompany.user.utils.TipUtil;
@@ -21,9 +19,21 @@ public class StudentTeachOrderController {
 	@RequestMapping(value = "/markscore", method = RequestMethod.POST)
 	@ResponseBody
 	public Object commentTeacher(
-			@RequestAttribute(value = "studentId", required = true) Integer studentId,
-			OrderTeacherScoreForm form) {
-		return TipUtil.success(teachOrderService.markScoreForOrder(studentId,form));
+			@RequestAttribute(value = "studentId", required = true) int studentId,
+			@RequestParam(value = "orderId",required = true) int orderId,
+			@RequestParam(value = "teacherMannerScore",required = true) float teacherMannerScore,
+			@RequestParam(value = "teacherSkillScore",required = true) float teacherSkillScore,
+			@RequestParam(value = "teacherCustomerScore",required = true) float teacherCustomerScore
+
+			) {
+
+		OrderTeacherScoreForm form=new OrderTeacherScoreForm();
+		form.setOrderId(orderId);
+		form.setTeacherCustomerScore(teacherCustomerScore);
+		form.setTeacherMannerScore(teacherMannerScore);
+		form.setTeacherSkillScore(teacherSkillScore);
+
+		return ApiResponse.buildSuccess(teachOrderService.markScoreForOrder(studentId,form));
 	}
 
 }

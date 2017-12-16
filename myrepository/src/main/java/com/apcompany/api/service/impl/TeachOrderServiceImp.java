@@ -33,9 +33,9 @@ public class TeachOrderServiceImp implements ITeachOrderService{
 		}	
 		TeachOrderDO teachOrderDO=new TeachOrderDO(invitationTeachDO);
 		TeachCourseDO teachCourseDO = tcService.getTCById(teachOrderDO.getTeachCourseId());		
-		teachOrderDO.setMoney(teachOrderDO.getUseMinute()*teachCourseDO.getMoneyPerMinute());
+		teachOrderDO.setCoin(teachOrderDO.getUseMinute()*teachCourseDO.getMoneyPerMinute());
 		teachOrderDao.add(teachOrderDO);
-		walletService.transMoney(teachOrderDO.getStudentId(), teachOrderDO.getTeacherId(), teachOrderDO.getMoney());
+		walletService.transMoney(teachOrderDO.getStudentId(), teachOrderDO.getTeacherId(), teachOrderDO.getCoin());
 		return teachOrderDO;
 	}
 
